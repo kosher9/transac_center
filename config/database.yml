@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: transac_center_production
-  username: transac_center
-  password: <%= ENV["TRANSAC_CENTER_DATABASE_PASSWORD"] %>
+  username: ced00
+  password: ced00
