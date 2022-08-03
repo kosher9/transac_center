@@ -3,9 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    if user_signed_in? == false
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path if user_signed_in? == false
     @users = User.all
   end
 
