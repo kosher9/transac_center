@@ -20,18 +20,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_144544) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id"
-    t.bigint "deal_id"
     t.index ["author_id"], name: "index_categories_on_author_id"
-    t.index ["deal_id"], name: "index_categories_on_deal_id"
   end
 
   create_table "deals", force: :cascade do |t|
     t.string "name"
-    t.decimal "amount"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id"
+    t.bigint "category_id"
     t.index ["author_id"], name: "index_deals_on_author_id"
+    t.index ["category_id"], name: "index_deals_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_144544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "deals"
   add_foreign_key "categories", "users", column: "author_id"
+  add_foreign_key "deals", "categories"
   add_foreign_key "deals", "users", column: "author_id"
 end
