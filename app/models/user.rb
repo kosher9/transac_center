@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, length: { minimum: 1 }
 
-  has_many :categories
-  has_many :deals
+  has_many :categories, dependent: :destroy
+  has_many :deals, dependent: :destroy
 end
