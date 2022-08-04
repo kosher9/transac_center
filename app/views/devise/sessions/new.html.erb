@@ -21,9 +21,9 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-  <button>
-    Sign up
-  </button>
+  <div>
+    <%= link_to 'Sign up', new_user_registration_path, method: :get %>
+  </div>
 <% end %>
 
-<%#= render "devise/shared/links" %>
+<%= render "devise/shared/links" %>
