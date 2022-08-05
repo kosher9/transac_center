@@ -9,7 +9,9 @@
 <div id="deals">
   <% @deals.each do |deal| %>
     <%= render deal %>
+    <%= button_to "Remove", category_deal_path(@category, deal), method: :delete %>
   <% end %>
 </div>
 
 <%= link_to "New deal", new_category_deal_path %>
+<%= link_to "Go back", categories_path %>

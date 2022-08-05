@@ -7,6 +7,7 @@
     <%= render category %>
     <p>
       <%= link_to "Show this category", category_deals_path(category.id) %>
+      <%= button_to "Remove", category_path(category), method: :delete %>
     </p>
   <% end %>
 </div>
