@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         format.html do
-          redirect_to categories_path(user_id: current_user.id), notice: 'Category was successfully created.'
+          redirect_to categories_path, notice: 'Category was successfully created.'
         end
         format.json { render :show, status: :created, location: @category }
       else
