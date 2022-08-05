@@ -4,6 +4,7 @@ class DealsController < ApplicationController
   # GET /deals or /deals.json
   def index
     @deals = Deal.where(category_id: params[:category_id])
+    @category = Category.find(params[:category_id])
   end
 
   # GET /deals/1 or /deals/1.json
@@ -55,7 +56,7 @@ class DealsController < ApplicationController
     @deal.destroy
 
     respond_to do |format|
-      format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
+      format.html { redirect_to category_deals_path, notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
