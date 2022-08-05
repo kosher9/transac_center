@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Deals</h1>
+<div>
+  <h5>Total amount : </h5>
+  <h5><%= @deals.map { |deal| deal.amount }.sum %></h5>
+</div>
 
 <div id="deals">
   <% @deals.each do |deal| %>
     <%= render deal %>
-    <p>
-      <%= link_to "Show this deal", deal %>
-    </p>
+    <%= button_to "Remove", category_deal_path(@category, deal), method: :delete %>
   <% end %>
 </div>
 
-<%= link_to "New deal", new_deal_path %>
+<%= link_to "New deal", new_category_deal_path %>
+<%= link_to "Go back", categories_path %>
