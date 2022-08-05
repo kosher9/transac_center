@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
+    p 'Love'
     redirect_to new_user_session_path if user_signed_in? == false
     @categories = Category.all
   end
