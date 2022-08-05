@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @category = Category.find(params[:id])
     @deals = Deal.where(category_id: params[:id])
   end
 
