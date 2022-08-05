@@ -1,9 +1,33 @@
 <h1>New deal</h1>
 
-<%= render "form", deal: @deal %>
+<%= form_with model: @deal, url: category_deals_path, method: :post, class: 'form' do |form| %>
+  <% if @deal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+        <% @deal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :name, autofocus: true, placeholder: "Name", required: true %>
+  </div>
+
+  <div>
+    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", required: true  %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Back to deals", deals_path %>
+  <%= link_to "Back to deals", category_deals_path %>
 </div>
