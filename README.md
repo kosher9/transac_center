@@ -1,24 +1,80 @@
-# README
+# Transac_Center
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby on Rails
+- PostgreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Rails](https://gorails.com/)
 
-* Database initialization
+### Setup
 
-* How to run the test suite
+- Make sure you have Ruby on Rails set up properly on your computer
+- Clone or download this repo on your machine
+- Enter project directory
 
-* Services (job queues, cache servers, search engines, etc.)
+### Development Database
 
-* Deployment instructions
+```sh
+# Create user
+sudo -u postgres createuser -e ced00 -s
+# Load the schema
+rails db:schema:load
+# Create the database
+rake db:create
+# Run database Migration
+rails db:migrate
+```
 
-* ...
+### Install
+
+```sh
+bundle install
+```
+
+### Run server
+
+```sh
+rails s
+```
+
+### Test
+
+```sh
+rspec
+```
+
+## Authors
+
+👤 **Cédric Kossi**
+
+- GitHub: [@kosher9](https://github.com/kosher9)
+- Twitter: [@kosherus](https://twitter.com/kosherus)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
