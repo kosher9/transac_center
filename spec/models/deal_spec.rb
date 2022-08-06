@@ -17,5 +17,4 @@ RSpec.describe Deal, type: :model do
   it 'is not valid with amount value 0' do
     expect(Deal.create(author: @author, category: @category, name: 'deal', amount: 0)).to_not be_valid
   end
-
 end

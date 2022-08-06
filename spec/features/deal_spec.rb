@@ -20,4 +20,3 @@ RSpec.describe 'Deal', type: :feature do
     end
   end
 end
-
