@@ -3,6 +3,10 @@
 # Live demo
 [Transac_center](https://pacific-taiga-56560.herokuapp.com)
 
+# Preview
+![](./preview_1.png)
+![](./preview_2.png)
+
 ## Built With
 
 - Ruby on Rails
