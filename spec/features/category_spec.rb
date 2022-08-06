@@ -9,11 +9,8 @@ RSpec.describe 'Category', type: :feature do
       fill_in 'user[password]', with: 'dwefwe'
       click_button 'Log in'
       @category = Category.create(author: @tom, icon: 'wcwrknvevnenevvk', name: 'my_category')
-      @category.save
       @deal_first = Deal.create(author: @author, category: @category, name: 'deal', amount: 24)
-      @deal_first.save
       @deal_sec = Deal.create(author: @author, category: @category, name: 'deal', amount: 200)
-      @deal_sec.save
     end
 
     feature 'Category index page' do
