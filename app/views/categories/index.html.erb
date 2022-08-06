@@ -11,6 +11,7 @@
 
   </div>
   <div id="categories" class="category-list-ctn">
+    <% if @categories.count != 0 %>
     <% @categories.each do |category| %>
       <%= link_to category_deals_path(category.id) do %>
       <div class="category-item">
@@ -21,6 +22,7 @@
       </div>
       <% end %>
     <% end %>
+      <%end %>
   </div>
 
   <div class="bottom-button">

@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     redirect_to new_user_session_path if user_signed_in? == false
-    @categories = current_user.categories.all
+    @categories = Category.where(author_id: current_user.id)
   end
 
   # GET /categories/1 or /categories/1.json
