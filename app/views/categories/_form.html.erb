@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.text_field :name, autofocus: true, placeholder: 'Name', required: true%>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.file_field :icon, autofocus: true, placeholder: 'Icon', required: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="button-link">
+    <%= form.submit "Valider", class: 'but-default' %>
   </div>
 <% end %>
